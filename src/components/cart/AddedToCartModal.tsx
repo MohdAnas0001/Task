@@ -56,7 +56,9 @@ export function AddedToCartModal({
               <div className="text-[13px] text-[#6A6F73]">
                 By {course.author}
               </div>
-              <div className="font-black text-[15px] sm:text-[16px] text-[#1C1D1F] mt-1.5">{formatPrice(course.price)}</div>
+              <div className="font-black text-[15px] sm:text-[16px] text-[#1C1D1F] mt-1.5">
+                {formatPrice(course.price)}<span className="text-xs font-bold text-[#5B4CF5]">/month</span>
+              </div>
             </div>
           </div>
 
@@ -89,8 +91,10 @@ export function AddedToCartModal({
                       {related.title}
                     </div>
                     <div className="flex items-center gap-1.5 mt-1">
-                      <span className="font-black text-[#1C1D1F] text-[14px]">{formatPrice(related.price)}</span>
-                      <span className="text-[#6A6F73] line-through text-[11px]">{formatPrice(related.originalPrice)}</span>
+                      <span className="font-black text-[#1C1D1F] text-[14px]">
+                        {formatPrice(related.price)}<span className="text-[10px] font-bold text-[#5B4CF5]">/month</span>
+                      </span>
+                      <span className="text-[#6A6F73] line-through text-[11px]">{formatPrice(related.originalPrice)}/mo</span>
                     </div>
                   </div>
                   <button

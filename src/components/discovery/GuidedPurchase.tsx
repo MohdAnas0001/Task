@@ -148,6 +148,7 @@ export function GuidedPurchase({ search }: { search: PurchaseSearch }) {
 
                         <span className="text-base font-extrabold text-[#0F1533]">
                           {formatPrice(course.price)}
+                          <span className="text-xs font-semibold text-[#5B4CF5]">/month</span>
                         </span>
                       </div>
                     </div>
@@ -178,9 +179,14 @@ export function GuidedPurchase({ search }: { search: PurchaseSearch }) {
 
             <div className="pt-4 mb-6 flex justify-between items-baseline">
               <span className="text-sm font-semibold text-[#0F1533]">Total</span>
-              <span className="text-2xl font-extrabold text-[#0F1533]">
-                {courses.length === 0 ? "—" : formatAmount(quote.price)}
-              </span>
+              <div className="text-right">
+                <span className="text-2xl font-extrabold text-[#0F1533]">
+                  {courses.length === 0 ? "—" : formatAmount(quote.price)}
+                </span>
+                {courses.length > 0 && (
+                  <span className="text-sm font-bold text-[#5B4CF5]">/month</span>
+                )}
+              </div>
             </div>
 
             <button

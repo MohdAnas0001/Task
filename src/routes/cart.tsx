@@ -122,10 +122,11 @@ function CartPage() {
                   <div className="text-right shrink-0 sm:pl-4">
                     <div className="font-bold text-base text-[#0F1533]">
                       {formatPrice(course.price)}
+                      <span className="text-xs font-semibold text-[#5B4CF5]">/month</span>
                     </div>
                     {course.originalPrice && (
                       <div className="text-xs text-gray-400 line-through">
-                        {formatPrice(course.originalPrice)}
+                        {formatPrice(course.originalPrice)}/mo
                       </div>
                     )}
                   </div>
@@ -151,15 +152,18 @@ function CartPage() {
                   )}
                   <div className="flex justify-between text-[#5A607A]">
                     <span>Subtotal</span>
-                    <span className="font-medium text-[#0F1533]">{formatAmount(cartTotal)}</span>
+                    <span className="font-medium text-[#0F1533]">{formatAmount(cartTotal)}/month</span>
                   </div>
                 </div>
 
                 <div className="pt-4 mb-6 flex justify-between items-baseline">
                   <span className="text-sm font-semibold text-[#0F1533]">Total</span>
-                  <span className="text-2xl font-extrabold text-[#0F1533]">
-                    {formatAmount(cartTotal)}
-                  </span>
+                  <div className="text-right">
+                    <span className="text-2xl font-extrabold text-[#0F1533]">
+                      {formatAmount(cartTotal)}
+                    </span>
+                    <span className="text-sm font-bold text-[#5B4CF5]">/month</span>
+                  </div>
                 </div>
 
                 <a
@@ -238,10 +242,11 @@ function CartPage() {
                         <div>
                           <div className="font-bold text-sm text-[#0F1533]">
                             {formatPrice(course.price)}
+                            <span className="text-[11px] font-semibold text-[#5B4CF5]">/month</span>
                           </div>
                           {course.originalPrice && (
                             <div className="text-[11px] text-gray-400 line-through">
-                              {formatPrice(course.originalPrice)}
+                              {formatPrice(course.originalPrice)}/mo
                             </div>
                           )}
                         </div>

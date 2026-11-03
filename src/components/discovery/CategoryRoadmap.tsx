@@ -56,7 +56,7 @@ export function CategoryRoadmap({ bandId, selectedCodes = [], onToggle }: Catego
           <h2 className="mt-3 font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">{active.title}</h2>
           <p className="mt-4 text-[15px] leading-relaxed text-[#5C5766]">{active.description}</p>
           <p className="mt-3 text-sm text-[#1C1D1F]">{active.artifact}</p>
-          <p className="mt-5 text-sm text-[#6B6578]">20 hours · 6 weeks · {formatPrice(active.price)}</p>
+          <p className="mt-5 text-sm text-[#6B6578]">20 hours · 6 weeks · {formatPrice(active.price)}/month</p>
           <div className="mt-6 flex items-center justify-center gap-4">
             <button
               type="button"

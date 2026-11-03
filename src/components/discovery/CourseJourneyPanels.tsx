@@ -72,10 +72,13 @@ export function CoursePurchaseCard({ course }: { course: CourseDetails }) {
         <p className="text-xs font-bold tracking-[0.14em] text-[#5B4CF5]">{course.code}</p>
         <h2 className="mt-1 font-display text-xl font-bold leading-snug text-[#0F1533]">{course.title}</h2>
         <p className="mt-2 text-sm leading-relaxed text-[#5A607A]">For {course.audience}. Certificate included when you finish.</p>
-        <div className="mt-4 flex items-end gap-2">
-          <p className="font-display text-4xl font-bold tracking-tight text-[#0F1533]">{formatPrice(course.price)}</p>
+        <div className="mt-4 flex items-baseline gap-2">
+          <p className="font-display text-4xl font-bold tracking-tight text-[#0F1533]">
+            {formatPrice(course.price)}
+            <span className="text-lg font-bold text-[#5B4CF5]">/month</span>
+          </p>
           {course.originalPrice ? (
-            <p className="mb-1 text-sm text-[#8B90A8] line-through">{formatPrice(course.originalPrice)}</p>
+            <p className="mb-1 text-sm text-[#8B90A8] line-through">{formatPrice(course.originalPrice)}/mo</p>
           ) : null}
         </div>
         <button

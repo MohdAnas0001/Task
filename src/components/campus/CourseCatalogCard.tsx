@@ -45,9 +45,17 @@ export function CourseCatalogCard({
             <p className="mt-2 line-clamp-2 min-h-[2.5em] text-[13px] leading-relaxed text-[#5A607A]">
               {course.description}
             </p>
-            <p className="mt-3 text-[12px] font-medium text-[#5A607A]">
-              {course.hours} hours · {course.packageLength || "6 weeks"}
-            </p>
+            <div className="mt-3 flex items-center justify-between border-t border-slate-100/80 pt-2.5">
+              <span className="text-[12px] font-medium text-[#5A607A]">
+                {course.hours} hours · {course.packageLength || "6 weeks"}
+              </span>
+              <div className="text-right">
+                <span className="font-extrabold text-[15px] text-[#0F1533]">
+                  {course.price}
+                </span>
+                <span className="text-[11px] font-semibold text-[#5B4CF5]">/month</span>
+              </div>
+            </div>
             <Link
               to="/course/$courseId"
               params={{ courseId: course.id }}
@@ -77,9 +85,16 @@ export function CourseCatalogCard({
               {course.category}
             </span>
           </div>
-          <span className="text-[11px] font-medium text-slate-500">
-            {course.hours}h · {course.packageLength || "6 weeks"}
-          </span>
+          <div className="text-right">
+            <span className="text-[12.5px] font-extrabold text-slate-900">
+              {course.price}<span className="text-[10px] font-bold text-[#5B4CF5]">/month</span>
+            </span>
+            {course.originalPrice ? (
+              <span className="ml-1 text-[10px] text-slate-400 line-through">
+                {course.originalPrice}/mo
+              </span>
+            ) : null}
+          </div>
         </div>
 
         {/* Title */}
@@ -150,7 +165,7 @@ export function CourseCatalogCard({
           params={{ courseId: course.id }}
           className="mt-3.5 flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#5B4CF5] py-2 text-[12.5px] font-bold text-white transition-colors hover:bg-[#4A3BE8]"
         >
-          <span>View Course Details</span>
+          <span>View Course Details ({course.price}/month)</span>
           <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </HoverCardContent>

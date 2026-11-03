@@ -58,7 +58,7 @@ export function CategoryExperience({ levelId: rawLevelId }: { levelId: PathwayLe
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3">
           <p className="text-sm text-[#1C1D1F]">
             <span className="font-semibold">{codes.length}</span> added
-            {quote.price > 0 ? <span className="text-[#5C5766]"> · {formatAmount(quote.price)}</span> : null}
+            {quote.price > 0 ? <span className="text-[#5C5766]"> · {formatAmount(quote.price)}/month</span> : null}
           </p>
           <button
             type="button"
